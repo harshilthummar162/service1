@@ -11,7 +11,7 @@ ARG PORT=3000
 ENV PORT=$PORT
 
 # Install PM2 globally
-# RUN npm install pm2 -g
+RUN npm install pm2 -g
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
@@ -24,7 +24,7 @@ COPY . .
 
 # Inform Docker that the container listens on the specified port at runtime
 EXPOSE $PORT
-CMD ["ls, "-a"]
+# CMD ["ls, "-a"]
 # CMD ["npm", "i", "-g", "pm2"]
 # Define command to run the app using PM2
-# CMD ["pm2", "start", "./app.yml"]
+CMD ["pm2", "start", "./app.yml"]

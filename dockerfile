@@ -4,6 +4,12 @@ FROM node:14
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
+# Define the default port as an argument (can be overridden during build)
+ARG PORT=3000
+
+# Set the environment variable PORT to the value of the ARG PORT
+ENV PORT=$PORT
+
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
@@ -13,8 +19,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-# Your app binds to port 3000 so you'll use the EXPOSE instruction to have it mapped by the docker daemon
-EXPOSE 3000
+# Inform Docker that the container listens on the specified port at runtime
+EXPOSE $PORT
 
 # Define command to run the app
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]

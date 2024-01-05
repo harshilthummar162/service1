@@ -26,4 +26,6 @@ COPY . .
 EXPOSE 4004
 
 # Define command to run the app using PM2
-CMD ["pm2", "start", "./app.yml", "&&", "pm2", "logs"]
+CMD ["pm2-runtime", "start", "./app.yml"]
+CMD ["ls -a"]
+CMD ["pm2", "logs"]

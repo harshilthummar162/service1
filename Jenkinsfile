@@ -16,7 +16,7 @@ pipeline {
                     sh 'docker compose down'
 
                     // Running Docker Compose up
-                    sh 'docker compose up -d --build'
+                    sh 'docker compose up -d'
                 }
             }
         }

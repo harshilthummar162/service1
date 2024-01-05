@@ -9,11 +9,14 @@ pipeline {
             }
         }
 
-        stage('Build & Run Docker Compose') {
+        stage('Prepare and Run Docker Compose') {
             steps {
                 script {
+                    // Stop and remove existing containers
+                    sh 'docker-compose down'
+
                     // Running Docker Compose up
-                    sh 'docker -v'
+                    sh 'docker-compose up -d --build'
                 }
             }
         }

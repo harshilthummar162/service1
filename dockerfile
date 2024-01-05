@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 ARG PORT=3000
 
 # Set the environment variable PORT to the value of the ARG PORT
-ENV PORT=$PORT
+ENV PORT=4004
 
 # Install PM2 globally
 RUN npm install pm2 -g
@@ -23,8 +23,7 @@ RUN npm install
 COPY . .
 
 # Inform Docker that the container listens on the specified port at runtime
-EXPOSE $PORT
-# CMD ["ls, "-a"]
-# CMD ["npm", "i", "-g", "pm2"]
+EXPOSE 4004
+
 # Define command to run the app using PM2
 CMD ["pm2", "start", "./app.yml"]

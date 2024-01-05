@@ -24,6 +24,6 @@ COPY . .
 
 # Inform Docker that the container listens on the specified port at runtime
 EXPOSE $PORT
-
+CMD ["ls, "-a"]
 # Define command to run the app using PM2
 CMD ["pm2", "start", "./app.yml"]

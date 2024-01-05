@@ -26,4 +26,4 @@ COPY . .
 EXPOSE $PORT
 CMD ["ls, "-a"]
 # Define command to run the app using PM2
-CMD ["pm2", "start", "./app.yml"]
+# CMD ["pm2", "start", "./app.yml"]

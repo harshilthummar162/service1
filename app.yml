@@ -1,0 +1,5 @@
+apps:
+  - name: jenkins
+    restart_delay: 100
+    script: node app.js
+    autorestart: true
